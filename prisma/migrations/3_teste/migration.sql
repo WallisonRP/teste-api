@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "User" (
+CREATE TABLE "User" IF NOT EXISTS (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
@@ -8,7 +8,7 @@ CREATE TABLE "User" (
 );
 
 -- CreateTable
-CREATE TABLE "distribuidor" (
+CREATE TABLE "distribuidor" IF NOT EXISTS (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "endereco_id" TEXT NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE "distribuidor" (
 );
 
 -- CreateTable
-CREATE TABLE "contato" (
+CREATE TABLE "contato" IF NOT EXISTS (
     "id_contato" TEXT NOT NULL,
     "email" TEXT,
     "telefone" TEXT,
@@ -29,7 +29,7 @@ CREATE TABLE "contato" (
 );
 
 -- CreateTable
-CREATE TABLE "endereco" (
+CREATE TABLE "endereco" IF NOT EXISTS (
     "id_endereco" TEXT NOT NULL,
     "logradouro" TEXT NOT NULL,
     "numero" TEXT NOT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE "endereco" (
 );
 
 -- CreateTable
-CREATE TABLE "tb_teste" (
+CREATE TABLE "tb_teste" IF NOT EXISTS (
     "id" TEXT NOT NULL,
     "nome" TEXT NOT NULL,
     "idade" INTEGER NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE "tb_teste" (
 );
 
 -- CreateTable
-CREATE TABLE "estados" (
+CREATE TABLE "estados" IF NOT EXISTS (
     "id" TEXT NOT NULL,
     "dados" JSONB NOT NULL,
 
