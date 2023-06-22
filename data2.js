@@ -11,16 +11,6 @@ export const data2 = {
         "fone": "16 4042-0037",
         "whatsapp": "16 4042-0037",
         "site": "https://www.brasilengrenagens.com.br"
-      },
-      {
-        "id": "3",
-        "name": "Item 3",
-        "nome": "ESCRITÓRIO BRASIL ENGRENAGENS",
-        "endereco": "Av. Dr. Francisco Junqueira, 133 - Ribeirão Preto-SP",
-        "cep": "14080-140",
-        "fone": "16 4042-0037",
-        "whatsapp": "16 4042-0037",
-        "site": "https://www.brasilengrenagens.com.br"
       }
     ]
   },

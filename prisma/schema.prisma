@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String @id
+  name  String
+  email String @unique
+}
+
+model tb_distribuidor {
+  id          String      @id @default(uuid())
+  name        String
+  endereco_id String      @unique
+  contato_id  String      @unique
+  tb_contato  tb_contato  @relation("contato", fields: [contato_id], references: [id_contato])
+  tb_endereco tb_endereco @relation("distribuidor", fields: [endereco_id], references: [id_endereco])
+}
+
+model tb_contato {
+  id_contato      String           @id @default(uuid())
+  email           String?
+  telefone        String?
+  whatsapp        String?
+  site            String?
+  tb_distribuidor tb_distribuidor? @relation("contato")
+}
+
+model tb_endereco {
+  id_endereco     String           @id @default(uuid())
+  logradouro      String
+  numero          String
+  complemento     String?
+  estado          String
+  cidade          String
+  bairro          String
+  cep             String
+  tb_distribuidor tb_distribuidor? @relation("distribuidor")
+}
+
+model tb_teste {
+  id    String @id
+  nome  String @unique
+  idade Int
+}
+
+model Estados {
+  id    String @id @default(uuid())
+  dados Json
+
+  @@map("estados")
+}
