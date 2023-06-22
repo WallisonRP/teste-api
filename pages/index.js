@@ -1,7 +1,5 @@
-
-export default function Home() {
-
-  return (
-    <p>Teste</p>
-  );
+function Home() {
+  return <>teste</>
 }
+
+module.exports = Home;
