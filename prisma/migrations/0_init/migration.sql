@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "User" IF NOT EXISTS (
+CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
@@ -8,7 +8,17 @@ CREATE TABLE "User" IF NOT EXISTS (
 );
 
 -- CreateTable
-CREATE TABLE "tb_contato" IF NOT EXISTS (
+CREATE TABLE "tb_distribuidor" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "endereco_id" TEXT NOT NULL,
+    "contato_id" TEXT NOT NULL,
+
+    CONSTRAINT "tb_distribuidor_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "tb_contato" (
     "id_contato" TEXT NOT NULL,
     "email" TEXT,
     "telefone" TEXT,
@@ -19,34 +29,34 @@ CREATE TABLE "tb_contato" IF NOT EXISTS (
 );
 
 -- CreateTable
-CREATE TABLE "tb_distribuidor" IF NOT EXISTS (
-    "id" TEXT NOT NULL,
-    "name" TEXT NOT NULL,
-    "endereco_id" TEXT NOT NULL,
-    "contato_id" TEXT NOT NULL,
-
-    CONSTRAINT "tb_distribuidor_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "tb_endereco" IF NOT EXISTS (
+CREATE TABLE "tb_endereco" (
     "id_endereco" TEXT NOT NULL,
     "logradouro" TEXT NOT NULL,
     "numero" TEXT NOT NULL,
     "complemento" TEXT,
-    "CEP" TEXT NOT NULL,
     "estado" TEXT NOT NULL,
+    "cidade" TEXT NOT NULL,
+    "bairro" TEXT NOT NULL,
+    "cep" TEXT NOT NULL,
 
     CONSTRAINT "tb_endereco_pkey" PRIMARY KEY ("id_endereco")
 );
 
 -- CreateTable
-CREATE TABLE "tb_teste" IF NOT EXISTS (
+CREATE TABLE "tb_teste" (
     "id" TEXT NOT NULL,
     "nome" TEXT NOT NULL,
     "idade" INTEGER NOT NULL,
 
     CONSTRAINT "tb_teste_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "estados" (
+    "id" TEXT NOT NULL,
+    "dados" JSONB NOT NULL,
+
+    CONSTRAINT "estados_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
